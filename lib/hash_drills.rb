@@ -1,3 +1,4 @@
+
 def shopping_list
   shopping_list = {
     sweets: ['soda', 'candy', 'potato chips'],
@@ -15,6 +16,7 @@ def shopping_list
 end
 
 def vegetarian_ingredients
+  /
   vegetarian_list = {
     :sweets => ["soda", "candy", "potato chips"],
     :protein => {
@@ -25,6 +27,17 @@ def vegetarian_ingredients
     :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
     :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
   }
+  /
+
+  vegetarian_list = Hash.new
+
+  vegetarian_list[:sweets] = shopping_list[:sweets]
+  vegetarian_list[:protein] = {}
+  vegetarian_list[:protein][:other] = shopping_list[:protein][:other]
+  vegetarian_list[:dairy] = shopping_list[:dairy]
+  vegetarian_list[:fruits] = shopping_list[:fruits]
+  vegetarian_list[:vegetables] = shopping_list[:vegetables]
+  vegetarian_list[:grains] = shopping_list[:grains]
 
   vegetarian_list = {}
 
@@ -40,6 +53,7 @@ def vegetarian_ingredients
 end
 
 def ketogenic_ingredients
+  /
   ketogenic_list = {
     protein: {
       meat: ['chicken (white)', 'fish (white)', 'steak (red)'],
@@ -48,6 +62,12 @@ def ketogenic_ingredients
     dairy: %w[milk yogurt cheese],
     vegetables: %w[cabbage broccoli tomatoes carrots]
   }
+  /
+  ketogenic_list = Hash.new
+
+  ketogenic_list[:protein] = shopping_list[:protein]
+  ketogenic_list[:dairy] = shopping_list[:dairy]
+  ketogenic_list[:vegetables] = shopping_list[:vegetables]
 
   ketogenic_list = {}
 
@@ -59,6 +79,7 @@ def ketogenic_ingredients
 end
 
 def mediterranean_ingredients
+  /
   mediterranean_list = {
     protein: {
       meat: ['chicken (white)', 'fish (white)'],
@@ -69,6 +90,17 @@ def mediterranean_ingredients
     vegetables: %w[cabbage broccoli tomatoes carrots],
     grains: %w[crackers rice bread pasta cereal]
   }
+  /
+
+  mediterranean_list = Hash.new
+
+  mediterranean_list[:protein] = {}
+  mediterranean_list[:protein][:meat] = ["chicken (white)", "fish (white)"]
+  mediterranean_list[:protein][:other] = ["nuts"]
+  mediterranean_list[:dairy] = shopping_list[:dairy]
+  mediterranean_list[:fruits] = shopping_list[:fruits]
+  mediterranean_list[:vegetables] = shopping_list[:vegetables]
+  mediterranean_list[:grains] = shopping_list[:grains]
 
   mediterranean_list = {}
 
@@ -84,6 +116,7 @@ def mediterranean_ingredients
 end
 
 def vegan_ingredients
+  /
   vegan_list = {
     sweets: ['soda', 'candy', 'potato chips'],
     protein: {
