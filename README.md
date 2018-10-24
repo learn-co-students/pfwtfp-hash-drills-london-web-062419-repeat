@@ -76,7 +76,6 @@ shopping_list = {
     :fruits => ["bananas", "oranges", "apples", "grapes"],
     :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
     :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-
 }
 ```
 
