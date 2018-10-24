@@ -2,15 +2,15 @@ require 'spec_helper'
 require_relative '../lib/hash_drills.rb'
 
 original_shopping_list = {
-  sweets: ['soda', 'candy', 'potato chips'],
-  protein: {
-    meat: ['chicken (white)', 'fish (white)', 'steak (red)'],
-    other: %w[eggs nuts beans]
-  },
-  dairy: %w[milk yogurt cheese],
-  fruits: %w[bananas oranges apples grapes],
-  vegetables: %w[cabbage broccoli tomatoes carrots],
-  grains: %w[crackers rice bread pasta cereal]
+    :sweets => ["soda", "candy", "potato chips"],
+    :protein => {
+        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :other => ["eggs", "nuts","beans"]
+    },
+    :dairy => ["milk", "yogurt", "cheese"],
+    :fruits => ["bananas", "oranges", "apples", "grapes"],
+    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
+    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
 }
 
 describe 'shopping_list' do
