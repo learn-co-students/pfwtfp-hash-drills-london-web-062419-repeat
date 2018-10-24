@@ -1,6 +1,32 @@
 require 'spec_helper'
 require_relative '../lib/hash_drills.rb'
 
+original_shopping_list = {
+    :sweets => ["soda", "candy", "potato chips"],
+    :protein => {
+        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :other => ["eggs", "nuts","beans"]
+    },
+    :dairy => ["milk", "yogurt", "cheese"],
+    :fruits => ["bananas", "oranges", "apples", "grapes"],
+    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
+    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
+}
+
+describe 'shopping_list' do
+  it 'has a method for the origin shopping list' do
+    expect { shopping_list }.not_to raise_error
+  end
+
+  it 'returns a shopping list that is a hash' do
+    expect(shopping_list).to be_kind_of(Hash)
+  end
+
+  it 'returns a hash of the original shopping list' do
+    expect(shopping_list).to eq(original_shopping_list)
+  end
+end
+
 describe 'vegetarian_ingredients' do
   it 'has a method for vegetarian ingredients' do
     expect { vegetarian_ingredients }.not_to raise_error

@@ -31,13 +31,14 @@ shopping_list = {
     :fruits => ["bananas", "oranges", "apples", "grapes"],
     :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
     :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-
 }
 ```
 
 #### Building New Hashes
 
 Since these recipes will require some attention to detail, we're going to write methods that will build 3 hashes to represent 3 separate shopping lists for guests with dietary restrictions.
+
+* `shopping_list` - To have a point of reference for each new list, create a method that only returns the shopping list as it already exists above.
 
 * `vegetarian_list` - For the vegetarian dishes, the ingredients will contain: Sweets, Eggs, Nuts, Beans, Vegetables, Fruits, and Grains
 
