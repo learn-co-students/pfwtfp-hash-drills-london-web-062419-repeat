@@ -37,34 +37,6 @@ shopping_list = {
 }
 ```
 
-```ruby
-shopping_list = {
-    :sweets => ["soda", "candy", "potato chips"],
-    :protein => {
-        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
-        :other => ["eggs", "nuts","beans"]
-    },
-    :dairy => ["milk", "yogurt", "cheese"],
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-}
-```
-
-```ruby
-shopping_list = {
-    :sweets => ["soda", "candy", "potato chips"],
-    :protein => {
-        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
-        :other => ["eggs", "nuts","beans"]
-    },
-    :dairy => ["milk", "yogurt", "cheese"],
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-}
-```
-
 #### Building New Hashes
 
 Since these recipes will require some attention to detail, we're going to write
