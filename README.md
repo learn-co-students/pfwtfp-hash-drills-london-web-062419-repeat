@@ -37,6 +37,34 @@ shopping_list = {
 }
 ```
 
+```ruby
+shopping_list = {
+    :sweets => ["soda", "candy", "potato chips"],
+    :protein => {
+        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :other => ["eggs", "nuts","beans"]
+    },
+    :dairy => ["milk", "yogurt", "cheese"],
+    :fruits => ["bananas", "oranges", "apples", "grapes"],
+    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
+    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
+}
+```
+
+```ruby
+shopping_list = {
+    :sweets => ["soda", "candy", "potato chips"],
+    :protein => {
+        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :other => ["eggs", "nuts","beans"]
+    },
+    :dairy => ["milk", "yogurt", "cheese"],
+    :fruits => ["bananas", "oranges", "apples", "grapes"],
+    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
+    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
+}
+```
+
 #### Building New Hashes
 
 Since these recipes will require some attention to detail, we're going to write
@@ -49,10 +77,10 @@ guests with dietary restrictions.
 - `vegetarian_list` - For the vegetarian dishes, the ingredients will contain:
   sweets, eggs, nuts, beans, vegetables, fruits, and grains
 
-- `ketogenic_list` - For the ketogenic dishes, the ingredients will contain:
+* `ketogenic_list` - For the ketogenic dishes, the ingredients will contain:
   eggs, nuts, beans, vegetables, dairy, and meat
 
-- `mediterranean_list` - For the mediterranean dishes, the ingredients will
+* `mediterranean_list` - For the mediterranean dishes, the ingredients will
   contain: nuts, vegetables, yogurt & cheese, and white meat (chicken & fish),
   fruits, and grains
 
