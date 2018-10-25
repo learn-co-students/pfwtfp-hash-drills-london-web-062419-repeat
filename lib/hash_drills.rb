@@ -15,19 +15,6 @@ def shopping_list
 end
 
 def vegetarian_ingredients
-  /
-  vegetarian_list = {
-    :sweets => ["soda", "candy", "potato chips"],
-    :protein => {
-        :other => ["eggs", "nuts","beans"]
-    },
-    :dairy => ["milk", "yogurt", "cheese"],
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-  }
-  /
-
   vegetarian_list = Hash.new
 
   vegetarian_list[:sweets] = shopping_list[:sweets]
@@ -42,16 +29,6 @@ def vegetarian_ingredients
 end
 
 def ketogenic_ingredients
-  /
-  ketogenic_list = {
-    :protein => {
-        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
-        :other => ["eggs", "nuts","beans"]
-    },
-    :dairy => ["milk", "yogurt", "cheese"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-  }
-  /
   ketogenic_list = Hash.new
 
   ketogenic_list[:protein] = shopping_list[:protein]
@@ -62,19 +39,6 @@ def ketogenic_ingredients
 end
 
 def mediterranean_ingredients
-  /
-  mediterranean_list = {
-    :protein => {
-        :meat => ["chicken (white)", "fish (white)"],
-        :other => "nuts"
-    },
-    :dairy => ["yogurt", "cheese"],
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-  }
-  /
-
   mediterranean_list = Hash.new
 
   mediterranean_list[:protein] = {}
@@ -89,17 +53,6 @@ def mediterranean_ingredients
 end
 
 def vegan_ingredients
-  /
-  vegan_list = {
-    :sweets => ["soda", "candy", "potato chips"],
-    :protein => {
-        :other => ["nuts","beans"]
-    },
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-  }
-  /
   vegan_list = vegetarian_ingredients
   vegan_list[:protein][:other].delete("eggs")
   vegan_list.delete(:dairy)
@@ -108,19 +61,6 @@ def vegan_ingredients
 end
 
 def mediterranean_ingredients_with_wine
-  /
-    new_mediterranean_list = {
-      :sweets => "wine",
-      :protein => {
-        :meat => ["chicken (white)", "fish (white)"],
-        :other => "nuts"
-    },
-    :dairy => ["yogurt", "cheese"],
-    :fruits => ["bananas", "oranges", "apples", "grapes"],
-    :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
-    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
-    }
-    /
     new_mediterranean_list = mediterranean_ingredients
     new_mediterranean_list[:sweets] = "wine"
 
