@@ -1,4 +1,3 @@
-
 def shopping_list
 {
     :sweets => ["soda", "candy", "potato chips"],

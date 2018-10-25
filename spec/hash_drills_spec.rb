@@ -10,6 +10,7 @@ original_shopping_list = {
     :dairy => ["milk", "yogurt", "cheese"],
     :fruits => ["bananas", "oranges", "apples", "grapes"],
     :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
+    :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
 }
 
 describe 'shopping_list' do
