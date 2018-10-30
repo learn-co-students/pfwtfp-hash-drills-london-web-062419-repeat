@@ -2,32 +2,29 @@
 
 ## Learning Goals
 
-- Access Data In Hashes
-- Modifying Data In Hashes
+- Access specific data in `Hash`es
+- Modifying data in `Hash`es
 - Perform operations on `Hash`es guided by tests
 
 ## Introduction
 
-We've discussed a few different ways that `Hash`es can be created and
-how useful they are in storing and retrieving associated data with ease.
-In this lessons we're going to do exercises that will help us practice
-working with `Hash`es.
+We've discussed a few different ways that `Hash`es can be created and how useful
+they are in storing and retrieving associated data with ease. In this lesson,
+we're going to practice accessing and modifying `Hash`es.
 
-### Perform Operations on `Hash`es Guided by Tests
+## Access Specific Data from `Hash`es
 
-- Analyze a `Hash` and identify existing keys and their values
-- Build out new `Hash`es by harvesting multiple nested keys
-- Modify an existing `Hash`
+We're going to host a dinner party! We have a list of nutritious ingredients we
+will be using to make dinner, but we want to prepare separate dishes for guests
+with dietary restrictions: vegetarian, ketogenic, and mediterranean.
 
-We're going to host a dinner party! We have a shopping list of nutritious
-ingredients, but we are going to prepare separate dishes for guests with dietary
-restrictions: vegetarian, ketogenic, and mediterranean.
+Here is our full list of ingredients:
 
 ```ruby
 shopping_list = {
     :sweets => ["soda", "candy", "potato chips"],
     :protein => {
-        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :meat => ["chicken", "fish", "steak"],
         :other => ["eggs", "nuts","beans"]
     },
     :dairy => ["milk", "yogurt", "cheese"],
@@ -37,42 +34,61 @@ shopping_list = {
 }
 ```
 
-#### Building New `Hash`es
+We will have to make sure only some of these items are used in our special
+dishes. Since our recipes will require some attention to detail, we're going to
+write methods that filter out the appropriate content.
 
-Since these recipes will require some attention to detail, we're going to write
-methods that will build 3 `Hash`es to represent 3 separate shopping lists for
-guests with dietary restrictions.
+We don't want to modify our original list, instead creating _new_ `Hash`es to
+represent the 3 separate ingredients lists for our guests with dietary
+restrictions.
 
-- `shopping_list` - To have a point of reference for each new list, create a
-  method that only returns the shopping list as it already exists above.
+## Instructions
 
-- `vegetarian_ingredients` - For the vegetarian dishes, the ingredients will contain:
-  sweets, eggs, nuts, beans, vegetables, fruits, and grains
+In `lib/hash_drills.rb`, we've got a copy of our original list. Your first task
+is to write three methods that return new `Hash`es, with only the appropriate
+values:
 
-* `ketogenic_ingredients` - For the ketogenic dishes, the ingredients will contain:
-  eggs, nuts, beans, vegetables, dairy, and meat
+`vegetarian_ingredients`: Vegetarian dishes cannot include meat, fish. While
+some vegetarians are okay with eggs, best to leave them off as well to be safe.
 
-* `mediterranean_ingredients` - For the mediterranean dishes, the ingredients will
-  contain: nuts, vegetables, yogurt & cheese, and white meat (chicken & fish),
-  fruits, and grains
+`ketogenic_ingredients`: Ketogenic dishes have very few carbs and sugars, and
+cannot include grains, fruits, or sweets. Cheese is great for keto, but not
+milk or yogurt. Also, leave out the beans. Return an ingredients list without
+these items.
 
-#### Modifying Existing `Hash`es
+`mediterranean_ingredients`: For mediterranean dishes, we can _only_ include
+chicken, fish, nuts, yogurt, cheese, fruits, vegetables, and grains.
 
-Now that we've sorted out mostly universal ingredients between our shopping
-lists, to be sure to accommodate all guests, we're going to modify our
-vegetarian and mediterranean lists, building out 2 additional methods
-to do so.
+After writing each method, run `learn` to confirm your solutions before
+continuing.
 
-- `vegan_ingredients` - Remove dairy and eggs from our vegetarian `Hash` to create a 4th
-  list for vegan.
-- `mediterranean_list_with_wine` - Takes our existing mediterranean list and
-  adds wine into the `Hash` as a type of `:sweets`--those guests love wine!
+## Late Additions to the Party
+
+#### Vegan Guest
+
+It turns out you've got a last minute addition to your guest list: your vegan
+friend is coming as well! We'll need to prepare a `vegan_ingredients` list.
+However, vegan diets are similar to vegetarian diets, so rather than write a
+method that filters from from our original list, let's use
+`vegetarian_ingredients`. Write a method that uses the `Hash` returned by
+`vegetarian_ingredients`, removes all dairy and returns a new `Hash`.
+
+#### Allergens
+
+You found a great recipe online for sweet and salty party nuts, and are
+eager to try it out on your guests. However, a dear friend RSVP'd saying she may
+or may not be able to make it. She has a severe nut allergy, and if she
+is able to come, you will need to modify _all_ of your ingredients lists to make
+sure there are no nuts in anything.
+
+Write a method `remove_allergens` that takes in any **one** of our ingredients
+`Hash`es as an argument, and returns a new hash with nuts removed.
 
 ## Conclusion
 
-You should now have a total of 4 separate `Hash`es with a combination of the
-original list of ingredients, plus added wine to your mediterranean. Your guests
-will be elated. Bon appetit!
+There are so many things to do to get ready for our party. With a little help
+from Ruby `Hash`es, though, we've got our lists of ingredients and can start
+preparing our menu! The guests will be elated. Bon appetit!
 
 ## Resources
 
