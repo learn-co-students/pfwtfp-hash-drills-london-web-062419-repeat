@@ -44,9 +44,9 @@ restrictions.
 
 ## Instructions
 
-In `lib/hash_drills.rb`, we've got a copy of our original list. Your first task
-is to write three methods that return new `Hash`es, with only the appropriate
-values:
+In `lib/hash_drills.rb`, we've got a method, `shopping_list`, that returns a
+`Hash` of our main shopping list. Your first task is to write three methods that
+return `Hash`es with only the appropriate values:
 
 `vegetarian_ingredients`: Vegetarian dishes cannot include meat, fish. While
 some vegetarians are okay with eggs, best to leave them off as well to be safe.
