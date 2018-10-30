@@ -76,4 +76,4 @@ will be elated. Bon appetit!
 
 - [Hashes]
 
-[`hash`es]: https://ruby-doc.org/core-2.5.1/Hash.html
+[hashes]: https://ruby-doc.org/core-2.5.1/Hash.html
