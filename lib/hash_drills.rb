@@ -1,8 +1,8 @@
 def shopping_list
-  shopping_list = {
+{
     :sweets => ["soda", "candy", "potato chips"],
     :protein => {
-        :meat => ["chicken (white)", "fish (white)", "steak (red)"],
+        :meat => ["chicken", "fish", "steak"],
         :other => ["eggs", "nuts","beans"]
     },
     :dairy => ["milk", "yogurt", "cheese"],
@@ -10,59 +10,45 @@ def shopping_list
     :vegetables => ["cabbage", "broccoli", "tomatoes", "carrots"],
     :grains => ["crackers", "rice", "bread", "pasta", "cereal"]
 }
-
-  shopping_list
 end
 
+# Write methods and implementation here based on README instructions and tests
+
+
 def vegetarian_ingredients
-  vegetarian_list = Hash.new
-
-  vegetarian_list[:sweets] = shopping_list[:sweets]
-  vegetarian_list[:protein] = {}
-  vegetarian_list[:protein][:other] = shopping_list[:protein][:other]
-  vegetarian_list[:dairy] = shopping_list[:dairy]
-  vegetarian_list[:fruits] = shopping_list[:fruits]
-  vegetarian_list[:vegetables] = shopping_list[:vegetables]
-  vegetarian_list[:grains] = shopping_list[:grains]
-
+  vegetarian_list = shopping_list
+  vegetarian_list[:protein].delete(:meat)
+  vegetarian_list[:protein][:other].shift
   vegetarian_list
 end
 
 def ketogenic_ingredients
-  ketogenic_list = Hash.new
-
-  ketogenic_list[:protein] = shopping_list[:protein]
-  ketogenic_list[:dairy] = shopping_list[:dairy]
-  ketogenic_list[:vegetables] = shopping_list[:vegetables]
-
-  ketogenic_list
+  keto_list = shopping_list.select {|key, value|
+    [:vegetables, :protein, :dairy].include? key
+  }
+  keto_list[:dairy] = ["cheese"]
+  keto_list
 end
 
 def mediterranean_ingredients
-  mediterranean_list = Hash.new
-
-  mediterranean_list[:protein] = {}
-  mediterranean_list[:protein][:meat] = ["chicken (white)", "fish (white)"]
-  mediterranean_list[:protein][:other] = ["nuts"]
-  mediterranean_list[:dairy] = shopping_list[:dairy]
-  mediterranean_list[:fruits] = shopping_list[:fruits]
-  mediterranean_list[:vegetables] = shopping_list[:vegetables]
-  mediterranean_list[:grains] = shopping_list[:grains]
-
-  mediterranean_list
+  okay_categories = [:protein, :dairy, :fruits, :vegetables, :grains]
+  med_list = shopping_list.select {|key,value|
+    okay_categories.include? key
+  }
+  med_list[:protein][:meat].delete("steak")
+  med_list[:protein][:other] = ["nuts"]
+  med_list[:dairy].delete("milk")
+  med_list
 end
+
 
 def vegan_ingredients
   vegan_list = vegetarian_ingredients
-  vegan_list[:protein][:other].delete("eggs")
   vegan_list.delete(:dairy)
-
   vegan_list
 end
 
-def mediterranean_ingredients_with_wine
-    new_mediterranean_list = mediterranean_ingredients
-    new_mediterranean_list[:sweets] = "wine"
-
-    new_mediterranean_list
+def remove_allergens(ingredients_hash)
+  ingredients_hash[:protein][:other].delete("nuts")
+  ingredients_hash
 end
