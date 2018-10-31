@@ -46,15 +46,14 @@ restrictions.
 
 In `lib/hash_drills.rb`, we've got a method, `shopping_list`, that returns a
 `Hash` of our main shopping list. Your first task is to write three methods that
-return `Hash`es with only the appropriate values:
+return `Hash`es with only the appropriate keys from our `shopping_list` `Hash`:
 
-`vegetarian_ingredients`: Vegetarian dishes cannot include meat, fish. While
-some vegetarians are okay with eggs, best to leave them off as well to be safe.
+`vegetarian_ingredients`: Vegetarian dishes cannot include meat or fish. While
+some vegetarians are okay with eggs, leave them off as well.
 
 `ketogenic_ingredients`: Ketogenic dishes have very few carbs and sugars, and
 cannot include grains, fruits, or sweets. Cheese is great for keto, but not
-milk or yogurt. Also, leave out the beans. Return an ingredients list without
-these items.
+milk or yogurt. Also, leave out the beans.
 
 `mediterranean_ingredients`: For mediterranean dishes, we can _only_ include
 chicken, fish, nuts, yogurt, cheese, fruits, vegetables, and grains.
@@ -69,9 +68,9 @@ continuing.
 It turns out you've got a last minute addition to your guest list: your vegan
 friend is coming as well! We'll need to prepare a `vegan_ingredients` list.
 However, vegan diets are similar to vegetarian diets, so rather than write a
-method that filters from from our original list, let's use
-`vegetarian_ingredients`. Write a method that uses the `Hash` returned by
-`vegetarian_ingredients`, removes all dairy and returns a new `Hash`.
+method that filters from from our `shopping_list`, let's use
+use the `Hash` returned by `vegetarian_ingredients`, remove all dairy items
+from it, and return this updated `Hash`.
 
 #### Allergens
 
