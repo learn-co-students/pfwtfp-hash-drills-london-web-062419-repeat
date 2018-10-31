@@ -139,5 +139,9 @@ describe 'remove_allergens' do
         end
       end
     end
+<<<<<<< HEAD
 
 end
+=======
+end
+>>>>>>> b9d42d592ed7f4ee441780fe8b7a2e2fcba3deed
