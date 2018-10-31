@@ -82,7 +82,7 @@ is able to come, you will need to modify _all_ of your ingredients lists to make
 sure there are no nuts in anything.
 
 Write a method `remove_allergens` that takes in any **one** of our ingredients
-`Hash`es as an argument, and returns a new hash with nuts removed.
+`Hash`es as an argument, and returns a new `Hash` with nuts removed.
 
 ## Conclusion
 
